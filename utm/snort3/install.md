@@ -44,7 +44,7 @@ ethtool -K ens33 gro off lro off
 mkdir /usr/local/etc/rules
 wget https://www.snort.org/downloads/community/snort3-community-rules.tar.gz
 tar xzf snort3-community-rules.tar.gz -C /usr/local/etc/rules/
-wget https://raw.githubusercontent.com/dewebdes/Iranian-Cyber-Army/master/firewall/snort/2022A.rules
+wget https://raw.githubusercontent.com/dewebdes/FatMouse/main/utm/snort3/2022A.rules
 cp 2022A.rules /usr/local/etc/rules/
 
 cd /usr/local/etc/snort
