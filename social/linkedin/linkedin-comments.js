@@ -21,6 +21,7 @@ function randuid() {
 function openreact() {
     clearInterval(reactint);
     if (reactindx < reacts.length - 1) {
+        lastsdif = 0;
         reacts[reactindx].click();
         reactindx++;
         reactint = setInterval(reactusers, 5000);
@@ -29,14 +30,22 @@ function openreact() {
         printusersactive();
     }
 }
+var lastsdif = 0;
 function reactusers() {
     clearInterval(reactint);
-    var reusl = document.querySelectorAll('.artdeco-entity-lockup__title');
-    for (var i = 0; i <= reusl.length - 1; i++) {
-        usnl[usnl.length] = reusl[i].querySelectorAll('span[dir="ltr"]')[0].innerText;
+    var scrodif = parseInt(document.querySelectorAll('.social-details-reactors-modal__content')[0].scrollHeight - document.querySelectorAll('.social-details-reactors-modal__content')[0].scrollTop);
+    if (scrodif != lastsdif) {
+        lastsdif = scrodif;
+        document.querySelectorAll('.social-details-reactors-modal__content')[0].scrollTop = document.querySelectorAll('.social-details-reactors-modal__content')[0].scrollHeight;
+        reactint = setInterval(reactusers, 5000);
+    } else {
+        var reusl = document.querySelectorAll('.artdeco-entity-lockup__title');
+        for (var i = 0; i <= reusl.length - 1; i++) {
+            usnl[usnl.length] = reusl[i].innerText;
+        }
+        document.querySelectorAll('.artdeco-modal__dismiss')[0].click();
+        reactint = setInterval(openreact, 1000);
     }
-    document.querySelectorAll('.artdeco-modal__dismiss')[0].click();
-    reactint = setInterval(openreact, 1000);
 }
 function printusers() {
     var unique = usnl.filter(onlyUnique);
