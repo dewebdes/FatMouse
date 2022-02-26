@@ -105,4 +105,5 @@ function printusersactive() {
     inp.remove();
     console.log('output copy to ram...');
 }
-openreact();
+//openreact();
+printusersactive();
