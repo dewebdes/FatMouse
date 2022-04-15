@@ -31,7 +31,7 @@ Names (457)
   | Akbari              | Ebrahim        |                                        |
   | Akbari              | Mohammad       | Chief Manager                          |
   | Akhavi              | Mehrnaz        |                                        |
-  | Alaei               | Amir           | People partner                         |
+  | Alaei               | Amir           | People partner                         | 
   | Alavi               | Maryam         |                                        |
   | Alem                | Saeed          | Hotel Commercial Manager               |
   | Aliashrafi          | Tohid          |                                        |
