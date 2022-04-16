@@ -1,53 +1,53 @@
 [recon-ng][fbi] > db schema
-                                                                                     
-  +---------------+                                                                  
-  |    domains    |                                                                  
-  +---------------+                                                                  
-  | domain | TEXT |                                                                  
-  | notes  | TEXT |                                                                  
-  | module | TEXT |                                                                  
-  +---------------+                                                                  
-                                                                                     
-                                                                                     
-  +--------------------+                                                             
-  |     companies      |                                                             
-  +--------------------+                                                             
-  | company     | TEXT |                                                             
-  | description | TEXT |                                                             
-  | notes       | TEXT |                                                             
-  | module      | TEXT |                                                             
-  +--------------------+                                                             
-                                                                                     
-                                                                                     
-  +-----------------+                                                                
-  |    netblocks    |                                                                
-  +-----------------+                                                                
-  | netblock | TEXT |                                                                
-  | notes    | TEXT |                                                                
-  | module   | TEXT |                                                                
-  +-----------------+                                                                
-                                                                                     
-                                                                                     
-  +-----------------------+                                                          
-  |       locations       |                                                          
-  +-----------------------+                                                          
-  | latitude       | TEXT |                                                          
-  | longitude      | TEXT |                                                          
-  | street_address | TEXT |                                                          
-  | notes          | TEXT |                                                          
-  | module         | TEXT |                                                          
-  +-----------------------+                                                          
-                                                                                     
-                                                                                     
-  +---------------------+                                                            
-  |   vulnerabilities   |                                                            
-  +---------------------+                                                            
-  | host         | TEXT |                                                            
-  | reference    | TEXT |                                                            
-  | example      | TEXT |                                                            
-  | publish_date | TEXT |                                                            
-  | category     | TEXT |                                                            
-  | status       | TEXT |                                                            
+                   
+  +---------------+
+  |    domains    |
+  +---------------+
+  | domain | TEXT |
+  | notes  | TEXT |
+  | module | TEXT |
+  +---------------+
+                   
+                   
+  +--------------------+
+  |     companies      |
+  +--------------------+
+  | company     | TEXT |
+  | description | TEXT |
+  | notes       | TEXT |
+  | module      | TEXT |
+  +--------------------+
+                   
+                   
+  +-----------------+   
+  |    netblocks    |   
+  +-----------------+   
+  | netblock | TEXT |   
+  | notes    | TEXT |   
+  | module   | TEXT |   
+  +-----------------+   
+                   
+                   
+  +-----------------------+
+  |       locations       |
+  +-----------------------+
+  | latitude       | TEXT |
+  | longitude      | TEXT |
+  | street_address | TEXT |
+  | notes          | TEXT |
+  | module         | TEXT |
+  +-----------------------+
+                   
+                   
+  +---------------------+  
+  |   vulnerabilities   |  
+  +---------------------+  
+  | host         | TEXT |  
+  | reference    | TEXT |  
+  | example      | TEXT |  
+  | publish_date | TEXT |  
+  | category     | TEXT |  
+  | status       | TEXT |  
   | notes        | TEXT |
   | module       | TEXT |
   +---------------------+
