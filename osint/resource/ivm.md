@@ -1,3 +1,4 @@
+<h1>Forked From: https://github.com/IVMachiavelli/OSINT_Team_Links</h1>
 # OSINT Team
 For the Hackers, Threat Intelligence, Journalists, Private Investigators, Sleuths, Sherlocks, Business Intelligence and everyone in between. <br>
 Slack Team Signup: https://openosint.signup.team
