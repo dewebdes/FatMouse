@@ -17,15 +17,15 @@ class multiproxy:
 		if self.num > 1:
 			upserv = ""
 			if self.num == 2:
-				upserv = "78.47.48.181"
+				upserv = "pxip2"
 			if self.num == 3:
-				upserv = "116.202.159.139"
+				upserv = "pxip3"
 			if self.num == 4:
-				upserv = "176.9.151.236"
+				upserv = "pxip4"
 			if self.num == 5:
-				upserv = "116.202.82.150"
+				upserv = "pxip5"
 			if self.num == 6:
-				upserv = "116.202.82.187"
+				upserv = "pxip6"
 				
 			#ctx.log.info("request to :> " + upserv)
 			address = (upserv, 8080)
