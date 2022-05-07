@@ -1,0 +1,225 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.17
+       Sponsored by Automattic - https://automattic.com/
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[32m[+][0m URL: https://www.alibaba.ir/mag/ [91.99.75.10]
+[32m[+][0m Started: Fri May  6 20:46:36 2022
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entries:
+ |  - access-control-allow-credentials: true
+ |  - access-control-allow-headers: ab-alohomora,ab-channel,content-type
+ |  - Access-Control-Allow-Methods: GET,POST,OPTIONS,PUT,HEAD
+ |  - access-control-allow-origin: *
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m XML-RPC seems to be enabled: https://www.alibaba.ir/mag/xmlrpc.php
+ | Found By: Link Tag (Passive Detection)
+ | Confidence: 30%
+ | References:
+ |  - http://codex.wordpress.org/XML-RPC_Pingback_API
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_ghost_scanner/
+ |  - https://www.rapid7.com/db/modules/auxiliary/dos/http/wordpress_xmlrpc_dos/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
+ |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
+
+
+Fingerprinting the version -: |=============================================|
+[32m[+][0m WordPress version 5.6.1 identified (Insecure, released on 2021-02-03).
+ | Found By: Meta Generator (Passive Detection)
+ |  - https://www.alibaba.ir/mag/, Match: 'WordPress 5.6.1'
+ |
+ | [31m[!][0m 13 vulnerabilities identified:
+ |
+ | [31m[!][0m Title: WordPress 5.6-5.7 - Authenticated XXE Within the Media Library Affecting PHP 8
+ |     Fixed in: 5.6.3
+ |     References:
+ |      - https://wpscan.com/vulnerability/cbbe6c17-b24e-4be4-8937-c78472a138b5
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29447
+ |      - https://wordpress.org/news/2021/04/wordpress-5-7-1-security-and-maintenance-release/
+ |      - https://core.trac.wordpress.org/changeset/29378
+ |      - https://blog.wpscan.com/2021/04/15/wordpress-571-security-vulnerability-release.html
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-rv47-pc52-qrhh
+ |      - https://blog.sonarsource.com/wordpress-xxe-security-vulnerability/
+ |      - https://hackerone.com/reports/1095645
+ |      - https://www.youtube.com/watch?v=3NBxcmqCgt4
+ |
+ | [31m[!][0m Title: WordPress 4.7-5.7 - Authenticated Password Protected Pages Exposure
+ |     Fixed in: 5.6.3
+ |     References:
+ |      - https://wpscan.com/vulnerability/6a3ec618-c79e-4b9c-9020-86b157458ac5
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-29450
+ |      - https://wordpress.org/news/2021/04/wordpress-5-7-1-security-and-maintenance-release/
+ |      - https://blog.wpscan.com/2021/04/15/wordpress-571-security-vulnerability-release.html
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-pmmh-2f36-wvhq
+ |      - https://core.trac.wordpress.org/changeset/50717/
+ |      - https://www.youtube.com/watch?v=J2GXmxAdNWs
+ |
+ | [31m[!][0m Title: WordPress 3.7 to 5.7.1 - Object Injection in PHPMailer
+ |     Fixed in: 5.6.4
+ |     References:
+ |      - https://wpscan.com/vulnerability/4cd46653-4470-40ff-8aac-318bee2f998d
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36326
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-19296
+ |      - https://github.com/WordPress/WordPress/commit/267061c9595fedd321582d14c21ec9e7da2dcf62
+ |      - https://wordpress.org/news/2021/05/wordpress-5-7-2-security-release/
+ |      - https://github.com/PHPMailer/PHPMailer/commit/e2e07a355ee8ff36aba21d0242c5950c56e4c6f9
+ |      - https://www.wordfence.com/blog/2021/05/wordpress-5-7-2-security-release-what-you-need-to-know/
+ |      - https://www.youtube.com/watch?v=HaW15aMzBUM
+ |
+ | [31m[!][0m Title: WordPress 5.4 to 5.8 -  Lodash Library Update
+ |     Fixed in: 5.6.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/5d6789db-e320-494b-81bb-e678674f4199
+ |      - https://wordpress.org/news/2021/09/wordpress-5-8-1-security-and-maintenance-release/
+ |      - https://github.com/lodash/lodash/wiki/Changelog
+ |      - https://github.com/WordPress/wordpress-develop/commit/fb7ecd92acef6c813c1fde6d9d24a21e02340689
+ |
+ | [31m[!][0m Title: WordPress 5.4 to 5.8 - Authenticated XSS in Block Editor
+ |     Fixed in: 5.6.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/5b754676-20f5-4478-8fd3-6bc383145811
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39201
+ |      - https://wordpress.org/news/2021/09/wordpress-5-8-1-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-wh69-25hr-h94v
+ |
+ | [31m[!][0m Title: WordPress 5.4 to 5.8 - Data Exposure via REST API
+ |     Fixed in: 5.6.5
+ |     References:
+ |      - https://wpscan.com/vulnerability/38dd7e87-9a22-48e2-bab1-dc79448ecdfb
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39200
+ |      - https://wordpress.org/news/2021/09/wordpress-5-8-1-security-and-maintenance-release/
+ |      - https://github.com/WordPress/wordpress-develop/commit/ca4765c62c65acb732b574a6761bf5fd84595706
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-m9hc-7v5q-x8q5
+ |
+ | [31m[!][0m Title: WordPress < 5.8.2 - Expired DST Root CA X3 Certificate
+ |     Fixed in: 5.6.6
+ |     References:
+ |      - https://wpscan.com/vulnerability/cc23344a-5c91-414a-91e3-c46db614da8d
+ |      - https://wordpress.org/news/2021/11/wordpress-5-8-2-security-and-maintenance-release/
+ |      - https://core.trac.wordpress.org/ticket/54207
+ |
+ | [31m[!][0m Title: WordPress < 5.8 - Plugin Confusion
+ |     Fixed in: 5.8
+ |     References:
+ |      - https://wpscan.com/vulnerability/95e01006-84e4-4e95-b5d7-68ea7b5aa1a8
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44223
+ |      - https://vavkamil.cz/2021/11/25/wordpress-plugin-confusion-update-can-get-you-pwned/
+ |
+ | [31m[!][0m Title: WordPress < 5.8.3 - SQL Injection via WP_Query
+ |     Fixed in: 5.6.7
+ |     References:
+ |      - https://wpscan.com/vulnerability/7f768bcf-ed33-4b22-b432-d1e7f95c1317
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21661
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-6676-cqfm-gw84
+ |      - https://hackerone.com/reports/1378209
+ |
+ | [31m[!][0m Title: WordPress < 5.8.3 - Author+ Stored XSS via Post Slugs
+ |     Fixed in: 5.6.7
+ |     References:
+ |      - https://wpscan.com/vulnerability/dc6f04c2-7bf2-4a07-92b5-dd197e4d94c8
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21662
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-699q-3hj9-889w
+ |      - https://hackerone.com/reports/425342
+ |      - https://blog.sonarsource.com/wordpress-stored-xss-vulnerability
+ |
+ | [31m[!][0m Title: WordPress 4.1-5.8.2 - SQL Injection via WP_Meta_Query
+ |     Fixed in: 5.6.7
+ |     References:
+ |      - https://wpscan.com/vulnerability/24462ac4-7959-4575-97aa-a6dcceeae722
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21664
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-jp3p-gw8h-6x86
+ |
+ | [31m[!][0m Title: WordPress < 5.8.3 - Super Admin Object Injection in Multisites
+ |     Fixed in: 5.6.7
+ |     References:
+ |      - https://wpscan.com/vulnerability/008c21ab-3d7e-4d97-b6c3-db9d83f390a7
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-21663
+ |      - https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-jmmq-m8p8-332h
+ |      - https://hackerone.com/reports/541469
+ |
+ | [31m[!][0m Title: WordPress < 5.9.2 - Prototype Pollution in jQuery
+ |     Fixed in: 5.6.8
+ |     References:
+ |      - https://wpscan.com/vulnerability/1ac912c1-5e29-41ac-8f76-a062de254c09
+ |      - https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/
+
+[32m[+][0m WordPress theme in use: alibaba
+ | Location: https://www.alibaba.ir/mag/wp-content/themes/alibaba/
+ | Style URL: https://www.alibaba.ir/mag/wp-content/themes/alibaba/style.css
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | The version could not be determined.
+
+[32m[+][0m Enumerating All Plugins (via Passive Methods)
+[32m[+][0m Checking Plugin Versions (via Passive and Aggressive Methods)
+
+[34m[i][0m Plugin(s) Identified:
+
+[32m[+][0m better-social-counter
+ | Location: https://www.alibaba.ir/mag/wp-content/plugins/better-social-counter/
+ |
+ | Found By: Urls In Homepage (Passive Detection)
+ |
+ | The version could not be determined.
+
+[32m[+][0m js_composer
+ | Location: https://www.alibaba.ir/mag/wp-content/plugins/js_composer/
+ | Last Updated: 2022-04-11T12:47:56.000Z
+ | [33m[!][0m The version is out of date, the latest version is 6.9.0
+ |
+ | Found By: Body Tag (Passive Detection)
+ |
+ | Version: 6.6.0 (60% confidence)
+ | Found By: Body Tag (Passive Detection)
+ |  - https://www.alibaba.ir/mag/, Match: 'js-comp-ver-6.6.0'
+
+[32m[+][0m wp-rocket
+ | Location: https://www.alibaba.ir/mag/wp-content/plugins/wp-rocket/
+ |
+ | Found By: Comment (Passive Detection)
+ |
+ | [31m[!][0m 1 vulnerability identified:
+ |
+ | [31m[!][0m Title: WP Rocket <= 2.10.3 - Local File Inclusion (LFI)
+ |     Fixed in: 2.10.4
+ |     References:
+ |      - https://wpscan.com/vulnerability/5484d821-7017-47a8-90d8-7d87cb5e0e50
+ |      - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11658
+ |      - https://wp-rocket.me/changelog
+ |      - https://gist.github.com/Shinkurt/157dbb3767c9489f3d754f79b183a890
+ |
+ | The version could not be determined.
+
+[32m[+][0m Enumerating Config Backups (via Passive and Aggressive Methods)
+
+ Checking Config Backups -: |===============================================|
+
+[34m[i][0m No Config Backups Found.
+
+[32m[+][0m WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 5
+ | Requests Remaining: 70
+
+[32m[+][0m Finished: Fri May  6 20:49:53 2022
+[32m[+][0m Requests Done: 863
+[32m[+][0m Cached Requests: 14
+[32m[+][0m Data Sent: 305.96 KB
+[32m[+][0m Data Received: 48.079 KB
+[32m[+][0m Memory used: 234.801 MB
+[32m[+][0m Elapsed time: 00:03:16
