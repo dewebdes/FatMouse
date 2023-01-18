@@ -66,10 +66,13 @@ function readresults() {
 
     var keys = output.split(' ');
     var tags = '';
+    var sep = ' ';
+    //sep = String.fromCharCode(13);
+    //sep = ',';
     for (var i = 0; i <= keys.length - 1; i++) {
         if (keys[i].trim().length > 5) {
             if (tags.indexOf(keys[i].trim()) == -1) {
-                tags += '#' + keys[i].trim() + ' ' + String.fromCharCode(13) + ' ';
+                tags += '#' + keys[i].trim() + sep;
             }
         }
     }
