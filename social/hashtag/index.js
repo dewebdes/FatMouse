@@ -37,17 +37,12 @@ function readresults() {
     if (offers.length > 0) {
         var acol = offers[0].querySelectorAll('a');
         for (var i = 0; i <= acol.length - 1; i++) {
-            var ln = seotm;
             var tit = acol[i].innerText;
             tit = replaceallstr(tit, '\n', '');
             tit = replaceallstr(tit, '\r', '');
             tit = replaceallstr(tit, '›', '');
             tit = replaceallstr(tit, '|', '');
             tit = replaceallstr(tit, '  ', ' ');
-            ///ln = replaceallstr(ln, 'tit', tit);
-
-            //ln = replaceallstr(ln, 'txt', tit);
-            //ln = replaceallstr(ln, 'tags', '');
 
             output = output + tit + ' ';
         }
