@@ -91,6 +91,7 @@
 </head>
 <body>
 
+    <button type="button" class="btn btn-warning" style="width:100%;z-index:100000;position:fixed;top:0px;left:0px;" onclick="download();">DOWNLOAD WINNER LIST...</button>
 
     <!--====================================== Search ===============================================-->
 
@@ -121,21 +122,21 @@
         var xpay = new Array();
         var rex = /^(\s|\w|\d|\.|\,|\;|\:|\?|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\~|\`|\'|\\|\-|\/|\+)*?$/;
 
-            var rix = 0;
-            var ras = '';
-            var rexint = '';
-            function tnext() {
-                result = rex.test(xpay[rix]);
-                if (result == true) {
-                    ras += rix + ' ,';
-                }
-                rix++;
-                document.title = ((rix) + '/' + xpay.length);
-                if (rix >= xpay.length) {
-                    clearInterval(rexint);
-                    alertify.alert(name, '<h1>BEST PAYLOADS</h1><div class="pricewideholder">' + ras + '</div>');
-                }
+        var rix = 0;
+        var ras = '';
+        var rexint = '';
+        function tnext() {
+            result = rex.test(xpay[rix]);
+            if (result == true) {
+                ras += rix + ' ,';
             }
+            rix++;
+            document.title = ((rix) + '/' + xpay.length);
+            if (rix >= xpay.length) {
+                clearInterval(rexint);
+                alertify.alert(name, '<h1>BEST PAYLOADS</h1><div class="pricewideholder">' + ras + '</div>');
+            }
+        }
         jQuery(document).ready(function () {
             jQuery('#xssplo').keypress(function (event) {
                 var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -143,12 +144,11 @@
                     xsscheck();
                 }
             });
-            
+
             $.get('xss-payload-list.txt', function (data) {
                 xpay = data.split('\n');
-                alert(xpay.length);
-                
-                rexint = setInterval(tnext,1000);
+
+                rexint = setInterval(tnext, 1000);
 
             });
         });
@@ -160,6 +160,30 @@
 
             alertify.alert(name, '<div class="pricewideholder">' + result + '</div>');
 
+        }
+        function download() {
+            var filename = 'payload.txt'
+            var text = '';
+
+            if (ras != '') {
+                var rasar = ras.split(',');
+                if (rasar.length > 1) {
+                    for (var ix = 0; ix <= rasar.length - 1; ix++) {
+                        if (rasar[ix].trim().length > 1) {
+                            text += xpay[parseInt(rasar[ix].trim())] + String.fromCharCode(13);
+                        }
+                    }
+                    
+                }
+
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
         }
     </script>
 
