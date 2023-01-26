@@ -126,6 +126,7 @@
         var ras = '';
         var rexint = '';
         function tnext() {
+            clearInterval(rexint);
             result = rex.test(xpay[rix]);
             if (result == true) {
                 ras += rix + ' ,';
@@ -134,7 +135,9 @@
             document.title = ((rix) + '/' + xpay.length);
             if (rix >= xpay.length) {
                 clearInterval(rexint);
-                alertify.alert(name, '<h1>BEST PAYLOADS</h1><div class="pricewideholder">' + ras + '</div>');
+                //alertify.alert(name, '<h1>BEST PAYLOADS</h1><div class="pricewideholder">' + ras + '</div>');
+            } else {
+                rexint = setInterval(tnext, 100);
             }
         }
         jQuery(document).ready(function () {
@@ -148,7 +151,7 @@
             $.get('xss-payload-list.txt', function (data) {
                 xpay = data.split('\n');
 
-                rexint = setInterval(tnext, 1000);
+                rexint = setInterval(tnext, 100);
 
             });
         });
